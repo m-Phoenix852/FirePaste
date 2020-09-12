@@ -1,0 +1,16 @@
+{
+  "name": "firepaste",
+  "version": "1.0.0",
+  "description": "Firebird's open source pastebin service.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Phoenix852",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "randexp": "^0.5.3"
+  }
+}
