@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const config = require("./config");
 const fs = require("fs");
 const randexp = require("randexp");
-const pasteman = require("./paste-manager");
 
 const listener = app.listen(config.port, () => {
   console.log(
