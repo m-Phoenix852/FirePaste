@@ -11,6 +11,8 @@ document.querySelector(".manageCard button").onclick = newPaste;
 
 document.querySelector("iframe").onload = () => {
   editorLoaded = !editorLoaded;
+  let pasteData = document.querySelector(".pasteData").innerHTML;
+  console.log(pasteData);
 
   if (pasteData) {
     document.querySelector("iframe").contentWindow.postMessage({

@@ -30,7 +30,6 @@ app.use(express.static(__dirname + "/public"));
 
 app.post("/paste", (req, res) => {
   let pasteID = genPasteID();
-  console.log(req.body);
   fs.writeFile(`./pastes/${pasteID}.firepaste`, req.body, (err) => {
     if (err) throw err;
     res.send({ success: true, data: { pasteID: pasteID } });
