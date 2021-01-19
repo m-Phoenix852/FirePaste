@@ -37,6 +37,18 @@ app.post("/paste", (req, res) => {
   });
 });
 
+app.get("/raw/:paste", (req, res, next) => {
+  if (fs.existsSync(`./pastes/${req.params.paste}.firepaste`)) {
+    let data = fs.readFileSync(
+      `./pastes/${req.params.paste}.firepaste`,
+      "utf-8"
+    );
+    res.contentType = "text/plain";
+    res.status(200).send(data);
+  } else {
+    res.redirect("/");
+  }
+});
 app.get("/:paste", (req, res, next) => {
   if (fs.existsSync(`./pastes/${req.params.paste}.firepaste`)) {
     let data = fs.readFileSync(
