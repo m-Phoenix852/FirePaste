@@ -24,7 +24,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(bodyParser.text({ type: "text/*" }));
+app.use(bodyParser.text({ type: "text/*", limit: config.pasteSizeLimit }));
 
 app.use(express.static(__dirname + "/public"));
 
