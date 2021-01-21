@@ -65,6 +65,8 @@ app.get("/", (req, res, next) => {
 });
 
 function setup() {
+  if(!fs.existsSync("./pastes/")) fs.mkdirSync("./pastes");
+  
   fs.readdirSync("./pastes/").forEach((pasteFile) => {
     if (!pasteFile.endsWith(".firepaste")) return;
 
